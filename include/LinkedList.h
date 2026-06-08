@@ -17,8 +17,14 @@ typedef struct LinkedList {
   int length;
 } LinkedList;
 
+// note: all pointer manipulation must go through the struct field
 LinkedList *list_create();
 void list_free(LinkedList *list);
 Node *node_create(void *data, size_t data_size);
 void node_free(Node *node);
+void append(Node *node, LinkedList *list);
+void prepend(Node *node, LinkedList *list);
+void insert(int idx, Node *node, LinkedList *list);
+void remove(Node *node, LinkedList *list);
+void index_remove(int idx, LinkedList *list);
 #endif
